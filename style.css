@@ -1,0 +1,41 @@
+.container {
+    margin: 150px;
+}
+.symbol {
+    /* transform: scale(2); */
+    margin: 0;
+    padding: 0;
+    /* display: flex; */
+}
+.ext-petal {
+    position: absolute;
+    width: 42px;
+    border-top: 58px solid var(--clr);
+    border-left: 15.5px solid transparent;
+    border-right: 15.5px solid transparent;
+    transform-origin: center 145px;
+    transform: rotate(calc(var(--i)*30deg));
+}
+
+.ext-petal::after{
+    content: '';
+    position: absolute;
+    width: 72.5px;
+    height: 18px;
+    left: -15.2px;
+    top: -75.5px;
+    background-color: var(--clr);
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+}
+
+.ext-petal::before{
+    content: '';
+    position: absolute;
+    width: 54px;
+    height: 7px;
+    left: -6.5px;
+    top: -7px;
+    background-color: white;
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+
+}
