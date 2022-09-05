@@ -1,3 +1,8 @@
+@font-face {
+  font-family: Gabriola;
+  src: url(Gabriola.ttf);
+}
+
 .container {
 	margin: 200px 180px;
 	width: 342px;
@@ -33,8 +38,9 @@
 	width: 97%;
 	height: 97%;
 	/* background-color: goldenrod; */
-	box-shadow:  0px 0px 0px 6px white,
-	0px 0px 0px 12px goldenrod;
+	box-shadow:  0px 0px 0px 4px white,
+	0px 0px 0px 9px goldenrod,
+	0 0 12px 14px goldenrod;
 	z-index: 2;
 }
 
@@ -84,10 +90,11 @@
 }
 
 .mid-circle {
-	width: 56%;
-	height: 56%;
-	box-shadow: inset 0 0 0 5px white,
-	inset 0 0 0 11px goldenrod;
+	width: 55%;
+	height: 55%;
+	box-shadow: inset 0 0 0 4px white,
+	inset 0 0 0 9px goldenrod,
+	0 0 10px 5px white;
 	/* background-color: yellowgreen; */
 	z-index: 4;
 }
@@ -143,8 +150,21 @@
 .internal-circle{
 	width: 17%;
 	height: 17%;
-	box-shadow: inset 0 0 0 5px white,
-	inset 0 0 0 10px goldenrod,
+	box-shadow: inset 0 0 0 4px white,
+	inset 0 0 0 9px goldenrod,
 	0 0 12px 8px white;
 	z-index: 5;
+}
+
+/* Text */
+
+.ext-petal span{
+	position: absolute;
+	top: -54px;
+	left: -3px;
+	display: flex;
+	font-family: Gabriola;
+	color: var(--txt-clr);
+	z-index: 10;
+	transform: rotate(calc(var(--i) * -30deg - 15deg));
 }
