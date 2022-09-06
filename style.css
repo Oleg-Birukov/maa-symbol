@@ -1,15 +1,16 @@
 @font-face {
-  font-family: Gabriola;
-  src: url(Gabriola.ttf);
+	font-family: Gabriola;
+	src: url(Gabriola.ttf);
 }
 
 .container {
 	margin: 200px 180px;
 	width: 342px;
 	height: 342px;
-	transform: scale(1.5);
 	/* background-color: blueviolet; */
+	transform: scale(1.5);
 }
+
 .symbol {
 	position: relative;
 	width: 100%;
@@ -38,9 +39,8 @@
 	width: 97%;
 	height: 97%;
 	/* background-color: goldenrod; */
-	box-shadow:  0px 0px 0px 4px white,
-	0px 0px 0px 9px goldenrod,
-	0 0 12px 14px goldenrod;
+	box-shadow: 0px 0px 0px 4px white, 0px 0px 0px 9px goldenrod,
+		0 0 12px 14px rgb(252, 201, 73);
 	z-index: 2;
 }
 
@@ -92,14 +92,13 @@
 .mid-circle {
 	width: 55%;
 	height: 55%;
-	box-shadow: inset 0 0 0 4px white,
-	inset 0 0 0 9px goldenrod,
-	0 0 10px 5px white;
+	box-shadow: inset 0 0 0 4px white, inset 0 0 0 9px goldenrod,
+		0 0 10px 5px white;
 	/* background-color: yellowgreen; */
 	z-index: 4;
 }
 
-.int-petals-container{
+.int-petals-container {
 	position: absolute;
 	box-sizing: content-box;
 	width: 39.5%;
@@ -108,7 +107,7 @@
 	justify-content: center;
 	align-items: center;
 	/* background-color: crimson; */
-	z-index: 3;;
+	z-index: 3;
 }
 
 .int-petal {
@@ -121,7 +120,6 @@
 	bottom: 18px;
 	/* border-radius: 3px; */
 	transform: rotate(calc(var(--i) * 90deg));
-
 }
 
 .int-petal::after {
@@ -147,10 +145,10 @@
 	border-radius: 50% 50% 0 0 / 100% 100% 0 0;
 }
 
-.internal-circle{
+.internal-circle {
 	width: 17%;
 	height: 17%;
-	box-shadow: inset 0 0 0 4px white,
+	box-shadow: inset 0 0 0 4px white, 
 	inset 0 0 0 9px goldenrod,
 	0 0 12px 8px white;
 	z-index: 5;
@@ -158,7 +156,7 @@
 
 /* Text */
 
-.ext-petal span{
+.ext-petal span {
 	position: absolute;
 	top: -54px;
 	left: -3px;
@@ -167,4 +165,221 @@
 	color: var(--txt-clr);
 	z-index: 10;
 	transform: rotate(calc(var(--i) * -30deg - 15deg));
+}
+
+.int-petal span{
+	position: absolute;
+	top: -45px;
+	left: -7px;
+	display: flex;
+	font-family: Gabriola;
+	font-size: 1.15em;
+	color: var(--txt-clr);
+	/* transform: rotate(calc(var(--i) * -90deg)); */
+	z-index: 110000;
+	order: 100;
+}
+
+/* ******************************** */
+/* Text position correction */
+/* ******************************** */
+
+/* Courage */
+.ext-petal:nth-child(1) span {
+	top: -53px;
+	left: -1px;
+}
+
+/* Progress */
+.ext-petal:nth-child(2) span {
+	top: -53px;
+	left: 1px;
+}
+
+/* Receptivity */
+.ext-petal:nth-child(3) span {
+	top: -55px;
+	left: -4px;
+}
+
+/* Aspiration */
+.ext-petal:nth-child(4) span {
+	top: -53px;
+	left: -7px;
+}
+
+/* Perseverance */
+.ext-petal:nth-child(5) span {
+	top: -53px;
+	left: -11px;
+}
+
+/* Gratitude */
+.ext-petal:nth-child(6) span {
+	top: -53px;
+	left: -3px;
+}
+
+/* Humility */
+.ext-petal:nth-child(7) span {
+	top: -53px;
+	left: -1px;
+}
+
+/* Sincerity */
+.ext-petal:nth-child(8) span {
+	top: -53px;
+	left: 1px;
+}
+
+/* Peace */
+.ext-petal:nth-child(9) span {
+	top: -55px;
+	left: 8px;
+}
+
+/* Equanimity */
+.ext-petal:nth-child(10) span {
+	top: -55px;
+	left: -8px;
+}
+
+/* Generosity */
+.ext-petal:nth-child(11) span {
+	top: -54px;
+	left: -6px;
+}
+
+/* Goodness */
+.ext-petal:nth-child(12) span {
+	top: -53px;
+	left: -4px;
+}
+
+/* -------------- */
+/* Mahakali */
+.int-petal:nth-child(1) span {
+	top: -50px;
+	left: -10px;
+}
+
+/* Mahalakshmi */
+.int-petal:nth-child(2) span {
+	top: -50px;
+	left: -23px;
+}
+
+/* Mahasaraswati */
+.int-petal:nth-child(3) span {
+	top: -50px;
+	left: -26px;
+}
+
+/* Maheshwari */
+.int-petal:nth-child(4) span {
+	top: -50px;
+	left: -18px;
+}
+
+
+/* ******************************** */
+/* Animation */
+/* ******************************** */
+
+:root {
+	--dur: 55s;
+}
+
+.symbol {
+	animation: symbol-rot var(--dur) infinite linear reverse;
+}
+
+.external-circle{
+	animation: ext-circle-glow calc(var(--dur) / 9)  infinite linear;
+}
+
+.mid-circle{
+	animation: mid-circle-glow calc(var(--dur) / 9)  infinite linear;
+}
+
+.internal-circle{
+	animation: int-circle-glow calc(var(--dur) / 9)  infinite linear;
+}
+
+.ext-petal span {
+	animation: text-rot var(--dur) infinite linear;
+}
+
+@keyframes symbol-rot {
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes text-rot {
+	from {
+		transform: rotate(calc(var(--i) * -30deg - 15deg));
+	}
+
+	to {
+		transform: rotate(calc(var(--i) * -30deg - 15deg + 360deg));
+	}
+}
+
+@keyframes ext-circle-glow {
+	from{
+		box-shadow: 0px 0px 0px 4px white, 
+		0px 0px 0px 9px goldenrod,
+		0 0 12px 14px rgb(252, 201, 73);
+	}
+
+	50%{
+		box-shadow: 0px 0px 0px 4px white, 
+		0px 0px 0px 9px goldenrod,
+		0 0 25px 20px rgb(252, 201, 73);
+	}
+
+	to{
+		box-shadow: 0px 0px 0px 4px white, 
+		0px 0px 0px 9px goldenrod,
+		0 0 12px 14px rgb(252, 201, 73);
+	}
+}
+
+@keyframes mid-circle-glow {
+	from{
+	box-shadow: inset 0 0 0 4px white, inset 0 0 0 9px goldenrod,
+		0 0 10px 5px white;
+	}
+
+	50%{
+	box-shadow: inset 0 0 0 4px white, inset 0 0 0 9px goldenrod,
+		0 0 20px 10px white;
+	}
+
+	to{
+	box-shadow: inset 0 0 0 4px white, inset 0 0 0 9px goldenrod,
+		0 0 10px 5px white;
+	}
+}
+
+@keyframes int-circle-glow {
+	from{
+	box-shadow: inset 0 0 0 4px white, inset 0 0 0 9px goldenrod,
+		0 0 10px 5px white;
+	}
+
+	50%{
+	box-shadow: inset 0 0 0 4px white, inset 0 0 0 9px goldenrod,
+		0 0 25px 15px white;
+	}
+
+	to{
+	box-shadow: inset 0 0 0 4px white, inset 0 0 0 9px goldenrod,
+		0 0 10px 5px white;
+	}
 }
