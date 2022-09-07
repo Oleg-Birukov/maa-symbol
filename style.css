@@ -4,16 +4,33 @@
 }
 
 body{
+	display: flex;
+	justify-content: center;
+	/* align-items: center; */
+	/* align-content: center;
+	text-align: center; */
 	--bg-c:darkblue;
 	background-color: var(--bg-c);
+	position: relative;
+	overflow: hidden;
 }
 
 .container {
-	margin: 200px 180px;
-	width: 370px;
-	height: 370px;
-	/* background-color: blueviolet; */
-	transform: scale(1.5);
+	position: absolute;
+	margin: 20px;
+	/* margin: 0 auto; */
+	/* text-align: center; */
+	/* display: flex; */
+	top: 50vh;
+	/* left: 50vh; */
+	/* margin-top: -370px; */
+	width: 740px;
+	height: 740px;
+	/* transform: scale(1.5); */
+	/* background-color: brown; */
+	/* width: auto; */
+	/* height: 100%; */
+	transform: translateY(-50%);
 }
 
 .symbol {
@@ -25,7 +42,6 @@ body{
 	justify-content: center;
 	justify-content: center;
 	align-items: center;
-	/* background-color: rgb(0, 255, 255); */
 }
 
 .external-circle {
@@ -36,21 +52,20 @@ body{
 	align-items: center;
 	width: 96%;
 	height: 96%;
-	border: 5px solid goldenrod;
+	border: 10px solid goldenrod;
 	border-radius: 50%;
-	/* background-color: goldenrod; */
-	box-shadow: inset 0px 0px 0px 4px var(--bg-c), 
-		inset 0px 0px 0px 9px goldenrod;
-	/* z-index: 2; */
+	box-shadow: inset 0px 0px 0px 8px var(--bg-c), 
+		inset 0px 0px 0px 18px goldenrod;
 }
 
 .external-circle span{
 	position: absolute;
-	height: 100%;
-	width: 100%;
+	height: 99.6%;
+	width: 99.6%;
 	border-radius: 50%;
-	border: 5px solid transparent;
-	box-shadow: 0 0 12px 14px rgb(252, 201, 73); 
+	border: 10px solid transparent;
+	box-shadow: 0 0 24px 28px rgb(252, 201, 73); 
+	z-index: 0;
 }
 
 .petals-container {
@@ -61,56 +76,43 @@ body{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	/* background-color: crimson; */
 	transform: rotate(15deg);
 }
 
 .ext-petal {
 	position: absolute;
-	width: 42px;
-	border-top: 58px solid var(--clr);
-	border-left: 15.5px solid transparent;
-	border-right: 15.5px solid transparent;
-	top: 18px;
-	bottom: 18px;
+	width: 84px;
+	border-top: 116px solid var(--clr);
+	border-left: 31px solid transparent;
+	border-right: 31px solid transparent;
+	top: 36px;
+	bottom: 36px;
 	transform: rotate(calc(var(--i) * 30deg));
 }
 
 .ext-petal::after {
 	content: "";
 	position: absolute;
-	width: 72.1px;
-	height: 18px;
-	left: -15.2px;
-	top: -75.2px;
+	width: 145px;
+	height: 36px;
+	left: -30.4px;
+	top: -150.4px;
 	background-color: var(--clr);
 	border-radius: 50% 50% 0 0 / 100% 100% 0 0;
 }
 
-/*.ext-petal::before {
-	content: "";
-	position: absolute;
-	width: 54px;
-	height: 7px;
-	left: -6.5px;
-	top: -7px;
-	background-color: white;
-	border-radius: 50% 50% 0 0 / 100% 100% 0 0;
-}
-*/
 .mid-circle {
 	position: absolute;
 	box-sizing: border-box;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	border: 5px solid goldenrod;
+	border: 10px solid goldenrod;
 	border-radius: 50%;
 	width: 49.5%;
 	height: 49.5%;
-	box-shadow: inset 0 0 0 4px var(--bg-c), 
-	inset 0 0 0 9px goldenrod;
-	/* background-color: yellowgreen; */
+	box-shadow: inset 0 0 0 8px var(--bg-c), 
+	inset 0 0 0 18px goldenrod;
 	z-index: 4;
 }
 
@@ -119,8 +121,8 @@ body{
 	height: 100%;
 	width: 100%;
 	border-radius: 50%;
-	border: 5px solid transparent;
-	box-shadow: 0 0 12px 8px white; 
+	border: 10px solid transparent;
+	box-shadow: 0 0 24px 16px white; 
 }
 
 .int-petals-container {
@@ -131,41 +133,38 @@ body{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	/* background-color: crimson; */
 	z-index: 3;
 }
 
 .int-petal {
 	position: absolute;
-	width: 33px;
-	border-top: 28px solid var(--clr);
-	border-left: 28px solid transparent;
-	border-right: 28px solid transparent;
-	top: 18px;
-	bottom: 18px;
-	/* border-radius: 3px; */
+	width: 66px;
+	border-top: 56px solid var(--clr);
+	border-left: 56px solid transparent;
+	border-right: 56px solid transparent;
+	top: 36px;
+	bottom: 36px;
 	transform: rotate(calc(var(--i) * 90deg));
 }
 
 .int-petal::after {
 	content: "";
 	position: absolute;
-	width: 91.4px;
-	height: 34.6px;
-	left: -29.4px;
-	top: -58px;
+	width: 185.2px;
+	height: 69.2px;
+	left: -59.6px;
+	top: -116px;
 	background-color: var(--clr);
 	border-radius: 82% 82% 15% 15% / 100% 100% 65% 65%;
-	/* box-shadow: inset 0 0 0 5px white; */
 }
 
 .int-petal::before {
 	content: "";
 	position: absolute;
-	width: 42px;
-	height: 16px;
-	left: -4.5px;
-	top: -6px;
+	width: 84px;
+	height: 32px;
+	left: -9px;
+	top: -12px;
 	background-color: var(--bg-c);
 	border-radius: 50% 50% 0 0 / 100% 100% 0 0;
 }
@@ -176,13 +175,13 @@ body{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	border: 5px solid goldenrod;
+	border: 10px solid goldenrod;
 	border-radius: 50%;
 	width: 15%;
 	height: 15%;
 	background-color: white;
-	box-shadow: inset 0 0 0 4px white, 
-	inset 0 0 0 9px goldenrod;
+	box-shadow: inset 0 0 0 8px white, 
+	inset 0 0 0 18px goldenrod;
 	z-index: 500;
 }
 
@@ -191,18 +190,21 @@ body{
 	height: 100%;
 	width: 100%;
 	border-radius: 50%;
-	border: 5px solid transparent;
-	box-shadow: 0 0 12px 8px white; 
+	border: 10px solid transparent;
+	box-shadow: 0 0 24px 16px white; 
 }
 
+/* ************************************** */
 /* Text */
+/* ************************************** */
 
 .ext-petal span {
 	position: absolute;
-	top: -54px;
-	left: -3px;
+	top: -108px;
+	left: -6px;
 	display: flex;
 	font-family: Gabriola;
+	font-size: 2em;
 	color: var(--txt-clr);
 	z-index: 10;
 	transform: rotate(calc(var(--i) * -30deg - 15deg));
@@ -210,15 +212,12 @@ body{
 
 .int-petal span{
 	position: absolute;
-	top: -45px;
-	left: -7px;
-	/* display: flex; */
+	top: -90px;
+	left: -14px;
 	font-family: Gabriola;
-	font-size: 1.15em;
+	font-size: 2.3em;
 	color: var(--txt-clr);
-	/* transform: rotate(calc(var(--i) * -90deg)); */
 	z-index: 100;
-	/* order: 100; */
 }
 
 /* ******************************** */
@@ -227,99 +226,99 @@ body{
 
 /* Courage */
 .ext-petal:nth-child(1) span {
-	top: -53px;
-	left: -1px;
+	top: -106px;
+	left: -2px;
 }
 
 /* Progress */
 .ext-petal:nth-child(2) span {
-	top: -53px;
-	left: 1px;
+	top: -106px;
+	left: 2px;
 }
 
 /* Receptivity */
 .ext-petal:nth-child(3) span {
-	top: -55px;
-	left: -4px;
+	top: -110px;
+	left: -8px;
 }
 
 /* Aspiration */
 .ext-petal:nth-child(4) span {
-	top: -53px;
-	left: -7px;
+	top: -106px;
+	left: -14px;
 }
 
 /* Perseverance */
 .ext-petal:nth-child(5) span {
-	top: -53px;
-	left: -11px;
+	top: -106px;
+	left: -22px;
 }
 
 /* Gratitude */
 .ext-petal:nth-child(6) span {
-	top: -53px;
-	left: -3px;
+	top: -106px;
+	left: -6px;
 }
 
 /* Humility */
 .ext-petal:nth-child(7) span {
-	top: -53px;
-	left: -1px;
+	top: -106px;
+	left: -2px;
 }
 
 /* Sincerity */
 .ext-petal:nth-child(8) span {
-	top: -53px;
-	left: 1px;
+	top: -106px;
+	left: 2px;
 }
 
 /* Peace */
 .ext-petal:nth-child(9) span {
-	top: -55px;
-	left: 8px;
+	top: -110px;
+	left: 16px;
 }
 
 /* Equanimity */
 .ext-petal:nth-child(10) span {
-	top: -55px;
-	left: -8px;
+	top: -110px;
+	left: -16px;
 }
 
 /* Generosity */
 .ext-petal:nth-child(11) span {
-	top: -54px;
-	left: -6px;
+	top: -108px;
+	left: -12px;
 }
 
 /* Goodness */
 .ext-petal:nth-child(12) span {
-	top: -53px;
-	left: -4px;
+	top: -106px;
+	left: -8px;
 }
 
 /* -------------- */
 /* Mahakali */
 .int-petal:nth-child(1) span {
-	top: -50px;
-	left: -10px;
+	top: -100px;
+	left: -20px;
 }
 
 /* Mahalakshmi */
 .int-petal:nth-child(2) span {
-	top: -50px;
-	left: -23px;
+	top: -100px;
+	left: -46px;
 }
 
 /* Mahasaraswati */
 .int-petal:nth-child(3) span {
-	top: -50px;
-	left: -26px;
+	top: -100px;
+	left: -52px;
 }
 
 /* Maheshwari */
 .int-petal:nth-child(4) span {
-	top: -50px;
-	left: -18px;
+	top: -100px;
+	left: -36px;
 }
 
 
@@ -351,27 +350,27 @@ body{
 
 @keyframes ext-circle-glow {
 	from{
-		box-shadow: 0 0 12px 14px rgb(252, 201, 73);
+		box-shadow: 0 0 24px 28px rgb(252, 201, 73);
 	}
 
 	to{
-		box-shadow: 0 0 25px 20px rgb(252, 201, 73);
+		box-shadow: 0 0 50px 40px rgb(252, 201, 73);
 	}
 }
 
-/* .mid-circle span{
-	animation: mid-circle-glow calc(var(--dur) / 9)  infinite alternate ease-in-out;
+.mid-circle span{
+	animation: mid-circle-glow calc(var(--dur) / 16)  infinite alternate ease-in-out;
 }
 
 @keyframes mid-circle-glow {
 	from{
-	box-shadow: 0 0 10px 5px white;
+	box-shadow: 0 0 20px 10px white;
 	}
 
 	to{
-	box-shadow: 0 0 20px 10px white;
+	box-shadow: 0 0 40px 25px white;
 	}
-} */
+}
 
 .internal-circle span{
 	animation: int-circle-glow calc(var(--dur) / 16)  infinite alternate ease-in-out;
@@ -379,11 +378,11 @@ body{
 
 @keyframes int-circle-glow {
 	from{
-	box-shadow: 0 0 10px 5px white;
+	box-shadow: 0 0 20px 10px white;
 	}
 
 	to{
-	box-shadow: 0 0 25px 15px white;
+	box-shadow: 0 0 50px 30px white;
 	}
 }
 
