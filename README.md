@@ -1,1 +1,3 @@
 # maa-symbol
+
+CSS only
