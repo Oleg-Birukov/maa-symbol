@@ -3,10 +3,15 @@
 	src: url(Gabriola.ttf);
 }
 
+body{
+	--bg-c:darkblue;
+	background-color: var(--bg-c);
+}
+
 .container {
 	margin: 200px 180px;
-	width: 342px;
-	height: 342px;
+	width: 370px;
+	height: 370px;
 	/* background-color: blueviolet; */
 	transform: scale(1.5);
 }
@@ -23,32 +28,36 @@
 	/* background-color: rgb(0, 255, 255); */
 }
 
-.external-circle,
-.mid-circle,
-.internal-circle {
+.external-circle {
 	position: absolute;
 	box-sizing: border-box;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	border: 6px solid goldenrod;
+	width: 96%;
+	height: 96%;
+	border: 5px solid goldenrod;
 	border-radius: 50%;
+	/* background-color: goldenrod; */
+	box-shadow: inset 0px 0px 0px 4px var(--bg-c), 
+		inset 0px 0px 0px 9px goldenrod;
+	/* z-index: 2; */
 }
 
-.external-circle {
-	width: 97%;
-	height: 97%;
-	/* background-color: goldenrod; */
-	box-shadow: 0px 0px 0px 4px white, 0px 0px 0px 9px goldenrod,
-		0 0 12px 14px rgb(252, 201, 73);
-	z-index: 2;
+.external-circle span{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	border-radius: 50%;
+	border: 5px solid transparent;
+	box-shadow: 0 0 12px 14px rgb(252, 201, 73); 
 }
 
 .petals-container {
 	position: relative;
 	box-sizing: content-box;
-	width: 95%;
-	height: 95%;
+	width: 89%;
+	height: 89%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -78,7 +87,7 @@
 	border-radius: 50% 50% 0 0 / 100% 100% 0 0;
 }
 
-.ext-petal::before {
+/*.ext-petal::before {
 	content: "";
 	position: absolute;
 	width: 54px;
@@ -88,26 +97,43 @@
 	background-color: white;
 	border-radius: 50% 50% 0 0 / 100% 100% 0 0;
 }
-
+*/
 .mid-circle {
-	width: 55%;
-	height: 55%;
-	box-shadow: inset 0 0 0 4px white, inset 0 0 0 9px goldenrod,
-		0 0 10px 5px white;
+	position: absolute;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 5px solid goldenrod;
+	border-radius: 50%;
+	width: 49.5%;
+	height: 49.5%;
+	box-shadow: inset 0 0 0 4px var(--bg-c), 
+	inset 0 0 0 9px goldenrod;
+		/* 0 0 10px 5px transparent; */
 	/* background-color: yellowgreen; */
-	z-index: 4;
+	/* z-index: 4; */
+}
+
+.mid-circle span{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	border-radius: 50%;
+	border: 5px solid transparent;
+	box-shadow: 0 0 12px 8px white; 
 }
 
 .int-petals-container {
 	position: absolute;
 	box-sizing: content-box;
-	width: 39.5%;
-	height: 39.5%;
+	width: 36%;
+	height: 36%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	/* background-color: crimson; */
-	z-index: 3;
+	/* z-index: 3; */
 }
 
 .int-petal {
@@ -141,17 +167,34 @@
 	height: 16px;
 	left: -4.5px;
 	top: -6px;
-	background-color: white;
+	background-color: var(--bg-c);
 	border-radius: 50% 50% 0 0 / 100% 100% 0 0;
 }
 
 .internal-circle {
-	width: 17%;
-	height: 17%;
+	position: absolute;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 5px solid goldenrod;
+	border-radius: 50%;
+	width: 15%;
+	height: 15%;
+	background-color: white;
 	box-shadow: inset 0 0 0 4px white, 
-	inset 0 0 0 9px goldenrod,
-	0 0 12px 8px white;
-	z-index: 5;
+	inset 0 0 0 9px goldenrod;
+	/* z-index: 5; */
+	/* order: 10; */
+}
+
+.internal-circle span{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	border-radius: 50%;
+	border: 5px solid transparent;
+	box-shadow: 0 0 12px 8px white; 
 }
 
 /* Text */
@@ -176,8 +219,8 @@
 	font-size: 1.15em;
 	color: var(--txt-clr);
 	/* transform: rotate(calc(var(--i) * -90deg)); */
-	z-index: 110000;
-	order: 100;
+	z-index: 100;
+	/* order: 100; */
 }
 
 /* ******************************** */
@@ -294,22 +337,6 @@
 	animation: symbol-rot var(--dur) infinite linear reverse;
 }
 
-.external-circle{
-	animation: ext-circle-glow calc(var(--dur) / 9)  infinite linear;
-}
-
-.mid-circle{
-	animation: mid-circle-glow calc(var(--dur) / 9)  infinite linear;
-}
-
-.internal-circle{
-	animation: int-circle-glow calc(var(--dur) / 9)  infinite linear;
-}
-
-.ext-petal span {
-	animation: text-rot var(--dur) infinite linear;
-}
-
 @keyframes symbol-rot {
 	from {
 		transform: rotate(0deg);
@@ -318,6 +345,64 @@
 	to {
 		transform: rotate(360deg);
 	}
+}
+
+.external-circle span{
+	animation: ext-circle-glow calc(var(--dur) / 9)  infinite ease-in-out;
+}
+
+@keyframes ext-circle-glow {
+	from{
+		box-shadow: 0 0 12px 14px rgb(252, 201, 73);
+	}
+
+	50%{
+		box-shadow: 0 0 25px 20px rgb(252, 201, 73);
+	}
+
+	to{
+		box-shadow: 0 0 12px 14px rgb(252, 201, 73);
+	}
+}
+
+/* .mid-circle span{
+	animation: mid-circle-glow calc(var(--dur) / 9)  infinite ease-in-out;
+}
+
+@keyframes mid-circle-glow {
+	from{
+	box-shadow: 0 0 10px 5px white;
+	}
+
+	50%{
+	box-shadow: 0 0 20px 10px white;
+	}
+
+	to{
+	box-shadow: 0 0 10px 5px white;
+	}
+} */
+
+.internal-circle span{
+	animation: int-circle-glow calc(var(--dur) / 9)  infinite ease-in-out;
+}
+
+@keyframes int-circle-glow {
+	from{
+	box-shadow: 0 0 10px 5px white;
+	}
+
+	50%{
+	box-shadow: 0 0 25px 15px white;
+	}
+
+	to{
+	box-shadow: 0 0 10px 5px white;
+	}
+}
+
+.ext-petal span {
+	animation: text-rot var(--dur) infinite linear;
 }
 
 @keyframes text-rot {
@@ -330,56 +415,3 @@
 	}
 }
 
-@keyframes ext-circle-glow {
-	from{
-		box-shadow: 0px 0px 0px 4px white, 
-		0px 0px 0px 9px goldenrod,
-		0 0 12px 14px rgb(252, 201, 73);
-	}
-
-	50%{
-		box-shadow: 0px 0px 0px 4px white, 
-		0px 0px 0px 9px goldenrod,
-		0 0 25px 20px rgb(252, 201, 73);
-	}
-
-	to{
-		box-shadow: 0px 0px 0px 4px white, 
-		0px 0px 0px 9px goldenrod,
-		0 0 12px 14px rgb(252, 201, 73);
-	}
-}
-
-@keyframes mid-circle-glow {
-	from{
-	box-shadow: inset 0 0 0 4px white, inset 0 0 0 9px goldenrod,
-		0 0 10px 5px white;
-	}
-
-	50%{
-	box-shadow: inset 0 0 0 4px white, inset 0 0 0 9px goldenrod,
-		0 0 20px 10px white;
-	}
-
-	to{
-	box-shadow: inset 0 0 0 4px white, inset 0 0 0 9px goldenrod,
-		0 0 10px 5px white;
-	}
-}
-
-@keyframes int-circle-glow {
-	from{
-	box-shadow: inset 0 0 0 4px white, inset 0 0 0 9px goldenrod,
-		0 0 10px 5px white;
-	}
-
-	50%{
-	box-shadow: inset 0 0 0 4px white, inset 0 0 0 9px goldenrod,
-		0 0 25px 15px white;
-	}
-
-	to{
-	box-shadow: inset 0 0 0 4px white, inset 0 0 0 9px goldenrod,
-		0 0 10px 5px white;
-	}
-}
