@@ -6,22 +6,25 @@
 body{
 	display: flex;
 	justify-content: center;
-	/* align-items: center; */
+	align-items: center;
 	/* align-content: center;
 	text-align: center; */
 	--bg-c:darkblue;
 	background-color: var(--bg-c);
-	position: relative;
+	/* position: relative; */
 	overflow: hidden;
+	min-width: 800px;
 }
 
 .container {
-	position: absolute;
-	margin: 20px;
+	/* position: absolute; */
+	position: relative;
+	margin: 0px;
+	padding: 40px;
 	/* margin: 0 auto; */
 	/* text-align: center; */
 	/* display: flex; */
-	top: 50vh;
+	/* top: 50%; */
 	/* left: 50vh; */
 	/* margin-top: -370px; */
 	width: 740px;
@@ -30,7 +33,7 @@ body{
 	/* background-color: brown; */
 	/* width: auto; */
 	/* height: 100%; */
-	transform: translateY(-50%);
+	/* transform: translateY(-50%); */
 }
 
 .symbol {
