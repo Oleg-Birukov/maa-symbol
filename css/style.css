@@ -1,55 +1,55 @@
 @import url(normalize.css);
 @font-face {
   font-family: Gabriola;
-  src: url(Gabriola.ttf);
+  src: local("/fonts/Gabriola.ttf") format("truetype");
 }
-:root {
-  --brd-t-small:4px;
-  --brd-t-big:10px;
-}
-
 body {
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
-  /* align-content: center;
-  text-align: center; */
-  --bg-c:darkblue;
   background-color: darkblue;
-  /* position: relative; */
   overflow: hidden;
-  /* min-width: 800px; */
 }
 
 .container {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 100vw;
   height: 100vh;
-  /* background-color: brown; */
 }
 
 .symbol {
   position: relative;
-  /* width: 780px;
-  height: 780px; */
   width: min(min(100vh, 100vw), 805px);
   height: min(min(100vh, 100vw), 805px);
-  padding: 50px;
   padding: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  /* background-color: cornflowerblue; */
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .external-circle {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 100%;
   height: 100%;
   /* width: min(min(100vh, 100vw), 780px);
@@ -59,10 +59,10 @@ body {
   border-radius: 50%;
   /* box-shadow: inset 0px 0px 0px 8px $bg_color, 
   	inset 0px 0px 0px 18px goldenrod; */
-  box-shadow: inset 0px 0px 0px calc(min(min(100vh, 100vw), 805px) * 0.0124) darkblue, inset 0px 0px 0px calc(min(min(100vh, 100vw), 805px) * 0.0124 * 2) goldenrod;
+  -webkit-box-shadow: inset 0px 0px 0px calc(min(min(100vh, 100vw), 805px) * 0.0124) darkblue, inset 0px 0px 0px calc(min(min(100vh, 100vw), 805px) * 0.0124 * 2) goldenrod;
+          box-shadow: inset 0px 0px 0px calc(min(min(100vh, 100vw), 805px) * 0.0124) darkblue, inset 0px 0px 0px calc(min(min(100vh, 100vw), 805px) * 0.0124 * 2) goldenrod;
   z-index: 10000;
 }
-
 .external-circle > span {
   position: absolute;
   height: 102.6%;
@@ -74,19 +74,30 @@ body {
 
 .petals-container {
   position: relative;
-  box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
   width: 95%;
   height: 95%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   /* transform: rotate(15deg); */
 }
 
 .ext-petal {
   position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 146px;
   /* width: calc(59.9px + (146 - 59.9) * ((100vw - 320px) / (780 - 320))); */
   width: calc(146 * min(min(100vh, 100vw) / 780, 1px));
@@ -96,9 +107,9 @@ body {
   border-left: calc(12.3px + 18.7 * (min(min(100vw, 100vh), 805px) - 320px) / 485) solid transparent;
   border-right: calc(12.3px + 18.7 * (min(min(100vw, 100vh), 805px) - 320px) / 485) solid transparent;
   inset: calc(19px + 16 * (min(min(100vw, 100vh), 805px) - 320px) / 485) auto;
-  transform: rotate(calc(var(--i) * 30deg));
+  -webkit-transform: rotate(calc(var(--i) * 30deg));
+          transform: rotate(calc(var(--i) * 30deg));
 }
-
 .ext-petal::after {
   content: "";
   position: absolute;
@@ -110,13 +121,35 @@ body {
   background-color: var(--clr);
   border-radius: 50% 50% 0 0/100% 100% 0 0;
 }
+.ext-petal > span {
+  position: absolute;
+  top: calc(-48px + -60 * (min(min(100vw, 100vh), 805px) - 320px) / 485);
+  /* left: -6px; */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: Gabriola;
+  font-size: 1em;
+  font-size: calc(13px + 17 * (min(min(100vw, 100vh), 805px) - 320px) / 485);
+  color: var(--txt-clr);
+  z-index: 10;
+  -webkit-transform: rotate(calc(var(--i) * -30deg - 0deg));
+          transform: rotate(calc(var(--i) * -30deg - 0deg));
+}
 
 .mid-circle {
   position: absolute;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   border: 10px solid goldenrod;
   border: calc(min(min(100vh, 100vw), 805px) * 0.0124) solid goldenrod;
   border-radius: 50%;
@@ -124,10 +157,10 @@ body {
   height: 56%;
   /* box-shadow: inset 0 0 0 8px $bg_color, 
   inset 0 0 0 18px goldenrod; */
-  box-shadow: inset 0 0 0 calc(min(min(100vh, 100vw), 805px) * 0.0124) darkblue, inset 0 0 0 calc(min(min(100vh, 100vw), 805px) * 0.0124 * 2) goldenrod;
+  -webkit-box-shadow: inset 0 0 0 calc(min(min(100vh, 100vw), 805px) * 0.0124) darkblue, inset 0 0 0 calc(min(min(100vh, 100vw), 805px) * 0.0124 * 2) goldenrod;
+          box-shadow: inset 0 0 0 calc(min(min(100vh, 100vw), 805px) * 0.0124) darkblue, inset 0 0 0 calc(min(min(100vh, 100vw), 805px) * 0.0124 * 2) goldenrod;
   z-index: 4;
 }
-
 .mid-circle > span {
   position: absolute;
   height: 106%;
@@ -139,12 +172,19 @@ body {
 
 .int-petals-container {
   position: absolute;
-  box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
   width: 36%;
   height: 36%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   z-index: 3;
 }
 
@@ -156,9 +196,9 @@ body {
   border-right: 56px solid transparent;
   top: 36px;
   bottom: 36px;
-  transform: rotate(calc(var(--i) * 90deg));
+  -webkit-transform: rotate(calc(var(--i) * 90deg));
+          transform: rotate(calc(var(--i) * 90deg));
 }
-
 .int-petal::after {
   content: "";
   position: absolute;
@@ -169,7 +209,6 @@ body {
   background-color: var(--clr);
   border-radius: 82% 82% 15% 15%/100% 100% 65% 65%;
 }
-
 .int-petal::before {
   content: "";
   position: absolute;
@@ -180,13 +219,29 @@ body {
   background-color: darkblue;
   border-radius: 50% 50% 0 0/100% 100% 0 0;
 }
+.int-petal > span {
+  position: absolute;
+  top: -90px;
+  left: -14px;
+  font-family: Gabriola;
+  font-size: 2.3em;
+  color: var(--txt-clr);
+  z-index: 100;
+}
 
 .internal-circle {
   position: absolute;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   border: 10px solid goldenrod;
   border: calc(min(min(100vh, 100vw), 805px) * 0.0124) solid goldenrod;
   border-radius: 50%;
@@ -197,10 +252,10 @@ body {
   background-color: white;
   /* box-shadow: inset 0 0 0 8px white, 
   inset 0 0 0 18px goldenrod; */
-  box-shadow: inset 0 0 0 calc(min(min(100vh, 100vw), 805px) * 0.0124 * 0.5) white, inset 0 0 0 calc(min(min(100vh, 100vw), 805px) * 0.0124 * 2 * 0.6) goldenrod;
+  -webkit-box-shadow: inset 0 0 0 calc(min(min(100vh, 100vw), 805px) * 0.0124 * 0.5) white, inset 0 0 0 calc(min(min(100vh, 100vw), 805px) * 0.0124 * 2 * 0.6) goldenrod;
+          box-shadow: inset 0 0 0 calc(min(min(100vh, 100vw), 805px) * 0.0124 * 0.5) white, inset 0 0 0 calc(min(min(100vh, 100vw), 805px) * 0.0124 * 2 * 0.6) goldenrod;
   z-index: 500;
 }
-
 .internal-circle > span {
   position: absolute;
   height: 133.6%;
@@ -213,29 +268,6 @@ body {
 /* ************************************** */
 /* Text */
 /* ************************************** */
-.ext-petal > span {
-  position: absolute;
-  top: calc(-48px + -60 * (min(min(100vw, 100vh), 805px) - 320px) / 485);
-  /* left: -6px; */
-  display: flex;
-  font-family: Gabriola;
-  font-size: 1em;
-  font-size: calc(13px + 17 * (min(min(100vw, 100vh), 805px) - 320px) / 485);
-  color: var(--txt-clr);
-  z-index: 10;
-  transform: rotate(calc(var(--i) * -30deg - 0deg));
-}
-
-.int-petal > span {
-  position: absolute;
-  top: -90px;
-  left: -14px;
-  font-family: Gabriola;
-  font-size: 2.3em;
-  color: var(--txt-clr);
-  z-index: 100;
-}
-
 /* ******************************** */
 /* Text position correction */
 /* ******************************** */
@@ -352,22 +384,26 @@ body {
 @-webkit-keyframes ext-circle-glow {
   from {
     /* box-shadow: 0 0 24px 28px rgb(252, 201, 73); */
-    box-shadow: 0 0 calc(min(min(100vh, 100vw), 805px) * 0.0124 * 3) calc(min(min(100vh, 100vw), 805px) * 0.0124 * 2) rgb(252, 201, 73);
+    -webkit-box-shadow: 0 0 calc(min(min(100vh, 100vw), 805px) * 0.0124 * 3) calc(min(min(100vh, 100vw), 805px) * 0.0124 * 2) rgb(252, 201, 73);
+            box-shadow: 0 0 calc(min(min(100vh, 100vw), 805px) * 0.0124 * 3) calc(min(min(100vh, 100vw), 805px) * 0.0124 * 2) rgb(252, 201, 73);
   }
   to {
     /* box-shadow: 0 0 50px 40px rgb(252, 201, 73); */
-    box-shadow: 0 0 calc(min(min(100vh, 100vw), 805px) * 0.0124 * 6) calc(min(min(100vh, 100vw), 805px) * 0.0124 * 3) rgb(252, 201, 73);
+    -webkit-box-shadow: 0 0 calc(min(min(100vh, 100vw), 805px) * 0.0124 * 6) calc(min(min(100vh, 100vw), 805px) * 0.0124 * 3) rgb(252, 201, 73);
+            box-shadow: 0 0 calc(min(min(100vh, 100vw), 805px) * 0.0124 * 6) calc(min(min(100vh, 100vw), 805px) * 0.0124 * 3) rgb(252, 201, 73);
   }
 }
 
 @keyframes ext-circle-glow {
   from {
     /* box-shadow: 0 0 24px 28px rgb(252, 201, 73); */
-    box-shadow: 0 0 calc(min(min(100vh, 100vw), 805px) * 0.0124 * 3) calc(min(min(100vh, 100vw), 805px) * 0.0124 * 2) rgb(252, 201, 73);
+    -webkit-box-shadow: 0 0 calc(min(min(100vh, 100vw), 805px) * 0.0124 * 3) calc(min(min(100vh, 100vw), 805px) * 0.0124 * 2) rgb(252, 201, 73);
+            box-shadow: 0 0 calc(min(min(100vh, 100vw), 805px) * 0.0124 * 3) calc(min(min(100vh, 100vw), 805px) * 0.0124 * 2) rgb(252, 201, 73);
   }
   to {
     /* box-shadow: 0 0 50px 40px rgb(252, 201, 73); */
-    box-shadow: 0 0 calc(min(min(100vh, 100vw), 805px) * 0.0124 * 6) calc(min(min(100vh, 100vw), 805px) * 0.0124 * 3) rgb(252, 201, 73);
+    -webkit-box-shadow: 0 0 calc(min(min(100vh, 100vw), 805px) * 0.0124 * 6) calc(min(min(100vh, 100vw), 805px) * 0.0124 * 3) rgb(252, 201, 73);
+            box-shadow: 0 0 calc(min(min(100vh, 100vw), 805px) * 0.0124 * 6) calc(min(min(100vh, 100vw), 805px) * 0.0124 * 3) rgb(252, 201, 73);
   }
 }
 .mid-circle > span {
@@ -378,22 +414,26 @@ body {
 @-webkit-keyframes mid-circle-glow {
   from {
     /* box-shadow: 0 0 20px 10px white; */
-    box-shadow: 0 0 calc(min(min(100vh, 100vw), 805px) * 0.0124 * 2) calc(min(min(100vh, 100vw), 805px) * 0.0124 * 1) white;
+    -webkit-box-shadow: 0 0 calc(min(min(100vh, 100vw), 805px) * 0.0124 * 2) calc(min(min(100vh, 100vw), 805px) * 0.0124 * 1) white;
+            box-shadow: 0 0 calc(min(min(100vh, 100vw), 805px) * 0.0124 * 2) calc(min(min(100vh, 100vw), 805px) * 0.0124 * 1) white;
   }
   to {
     /* box-shadow: 0 0 40px 25px white; */
-    box-shadow: 0 0 calc(min(min(100vh, 100vw), 805px) * 0.0124 * 4) calc(min(min(100vh, 100vw), 805px) * 0.0124 * 2) white;
+    -webkit-box-shadow: 0 0 calc(min(min(100vh, 100vw), 805px) * 0.0124 * 4) calc(min(min(100vh, 100vw), 805px) * 0.0124 * 2) white;
+            box-shadow: 0 0 calc(min(min(100vh, 100vw), 805px) * 0.0124 * 4) calc(min(min(100vh, 100vw), 805px) * 0.0124 * 2) white;
   }
 }
 
 @keyframes mid-circle-glow {
   from {
     /* box-shadow: 0 0 20px 10px white; */
-    box-shadow: 0 0 calc(min(min(100vh, 100vw), 805px) * 0.0124 * 2) calc(min(min(100vh, 100vw), 805px) * 0.0124 * 1) white;
+    -webkit-box-shadow: 0 0 calc(min(min(100vh, 100vw), 805px) * 0.0124 * 2) calc(min(min(100vh, 100vw), 805px) * 0.0124 * 1) white;
+            box-shadow: 0 0 calc(min(min(100vh, 100vw), 805px) * 0.0124 * 2) calc(min(min(100vh, 100vw), 805px) * 0.0124 * 1) white;
   }
   to {
     /* box-shadow: 0 0 40px 25px white; */
-    box-shadow: 0 0 calc(min(min(100vh, 100vw), 805px) * 0.0124 * 4) calc(min(min(100vh, 100vw), 805px) * 0.0124 * 2) white;
+    -webkit-box-shadow: 0 0 calc(min(min(100vh, 100vw), 805px) * 0.0124 * 4) calc(min(min(100vh, 100vw), 805px) * 0.0124 * 2) white;
+            box-shadow: 0 0 calc(min(min(100vh, 100vw), 805px) * 0.0124 * 4) calc(min(min(100vh, 100vw), 805px) * 0.0124 * 2) white;
   }
 }
 .internal-circle > span {
@@ -404,22 +444,26 @@ body {
 @-webkit-keyframes int-circle-glow {
   from {
     /* box-shadow: 0 0 20px 10px white; */
-    box-shadow: 0 0 calc(min(min(100vh, 100vw), 805px) * 0.0124 * 3) calc(min(min(100vh, 100vw), 805px) * 0.0124 * 2) white;
+    -webkit-box-shadow: 0 0 calc(min(min(100vh, 100vw), 805px) * 0.0124 * 3) calc(min(min(100vh, 100vw), 805px) * 0.0124 * 2) white;
+            box-shadow: 0 0 calc(min(min(100vh, 100vw), 805px) * 0.0124 * 3) calc(min(min(100vh, 100vw), 805px) * 0.0124 * 2) white;
   }
   to {
     /* box-shadow: 0 0 50px 30px white; */
-    box-shadow: 0 0 calc(min(min(100vh, 100vw), 805px) * 0.0124 * 6) calc(min(min(100vh, 100vw), 805px) * 0.0124 * 4) white;
+    -webkit-box-shadow: 0 0 calc(min(min(100vh, 100vw), 805px) * 0.0124 * 6) calc(min(min(100vh, 100vw), 805px) * 0.0124 * 4) white;
+            box-shadow: 0 0 calc(min(min(100vh, 100vw), 805px) * 0.0124 * 6) calc(min(min(100vh, 100vw), 805px) * 0.0124 * 4) white;
   }
 }
 
 @keyframes int-circle-glow {
   from {
     /* box-shadow: 0 0 20px 10px white; */
-    box-shadow: 0 0 calc(min(min(100vh, 100vw), 805px) * 0.0124 * 3) calc(min(min(100vh, 100vw), 805px) * 0.0124 * 2) white;
+    -webkit-box-shadow: 0 0 calc(min(min(100vh, 100vw), 805px) * 0.0124 * 3) calc(min(min(100vh, 100vw), 805px) * 0.0124 * 2) white;
+            box-shadow: 0 0 calc(min(min(100vh, 100vw), 805px) * 0.0124 * 3) calc(min(min(100vh, 100vw), 805px) * 0.0124 * 2) white;
   }
   to {
     /* box-shadow: 0 0 50px 30px white; */
-    box-shadow: 0 0 calc(min(min(100vh, 100vw), 805px) * 0.0124 * 6) calc(min(min(100vh, 100vw), 805px) * 0.0124 * 4) white;
+    -webkit-box-shadow: 0 0 calc(min(min(100vh, 100vw), 805px) * 0.0124 * 6) calc(min(min(100vh, 100vw), 805px) * 0.0124 * 4) white;
+            box-shadow: 0 0 calc(min(min(100vh, 100vw), 805px) * 0.0124 * 6) calc(min(min(100vh, 100vw), 805px) * 0.0124 * 4) white;
   }
 }
 /* .ext-petal span {
