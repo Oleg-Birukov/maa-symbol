@@ -6,10 +6,6 @@
 body{
 	--bg-c:darkblue;
 	background-color: var(--bg-c);
-  display: flex;
-   justify-content: center;
-  align-items: center;
-
 }
 
 .container {
