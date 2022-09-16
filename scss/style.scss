@@ -260,7 +260,7 @@ body {
 
 		> span {
 			@include proportional_length(top, -40px, $s-t);
-			@include proportional_length(font-size, 14px, $s-fz);
+			@include proportional_length(font-size, 12px, $s-fz);
 		}
 	}
 }
