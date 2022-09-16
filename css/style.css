@@ -4,7 +4,7 @@
   src: local("/fonts/Gabriola.ttf") format("truetype");
 }
 body {
-  background-color: rgb(79, 0, 128);
+  background-image: radial-gradient(closest-corner, rgb(79, 0, 128), rgb(79, 0, 128), rgb(51, 1, 59));
   overflow: hidden;
 }
 

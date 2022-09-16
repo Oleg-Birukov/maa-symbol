@@ -13,7 +13,8 @@ $dur_divider:24;
 }
 
 body {
-	background-color: $bg_color;
+	// background-color: $bg_color;
+	background-image: radial-gradient(closest-corner, $bg_color, $bg_color, rgb(51, 1, 59));
 	overflow: hidden;
 }
 
