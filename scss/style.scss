@@ -9,7 +9,12 @@ $dur_divider: 20;
 
 @font-face {
 	font-family: Gabriola;
-	src: url("/fonts/Gabriola.ttf") format("truetype");
+	// src: url("/fonts/Gabriola.ttf") format("truetype");
+	src: url("/fonts/Gabriola.woff2") format("woff2"),
+		url("/fonts/Gabriola.woff") format("woff"), url("/fonts/Gabriola.ttf") format("truetype");
+	// font-weight: normal;
+	// font-style: normal;
+	// font-display: swap;
 }
 
 body {
