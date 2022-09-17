@@ -9,7 +9,7 @@ $dur_divider: 20;
 
 @font-face {
 	font-family: Gabriola;
-	src: src("/fonts/Gabriola.ttf") format("truetype");
+	src: url("/fonts/Gabriola.ttf") format("truetype");
 }
 
 body {
