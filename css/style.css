@@ -34,12 +34,24 @@ body {
     height: min(100vh, 100vw);
   }
 }
-@keyframes symbol-rot {
+@-webkit-keyframes symbol-rot {
   from {
-    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   to {
-    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@keyframes symbol-rot {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
 
@@ -60,7 +72,16 @@ body {
   height: 102.6%;
   width: 102.6%;
   border-radius: 50%;
-  animation: ext-circle-glow 2.85s infinite alternate ease-in-out;
+  -webkit-animation: ext-circle-glow 2.85s infinite alternate ease-in-out;
+          animation: ext-circle-glow 2.85s infinite alternate ease-in-out;
+}
+@-webkit-keyframes ext-circle-glow {
+  from {
+    box-shadow: 0 0 21px 15px rgb(252, 201, 73), inset 0 0 0 2px goldenrod;
+  }
+  to {
+    box-shadow: 0 0 31.5px 22.5px rgb(252, 201, 73), inset 0 0 0 2px goldenrod;
+  }
 }
 @keyframes ext-circle-glow {
   from {
@@ -74,6 +95,14 @@ body {
   .external-circle {
     border: calc(4px + 6 * (min(100vw, 100vh) - 320px) / 485) solid goldenrod;
     box-shadow: inset 0px 0px 0px calc(4px + 6 * (min(100vw, 100vh) - 320px) / 485) rgb(79, 0, 128), inset 0px 0px 0px calc((4px + 6 * (min(100vw, 100vh) - 320px) / 485) * 2) goldenrod;
+  }
+  @-webkit-keyframes ext-circle-glow {
+    from {
+      box-shadow: 0 0 calc(15px + 6 * (min(100vw, 100vh) - 320px) / 485) calc(8px + 7 * (min(100vw, 100vh) - 320px) / 485) rgb(252, 201, 73), inset 0 0 0 2px goldenrod;
+    }
+    to {
+      box-shadow: 0 0 calc(22.5px + 9 * (min(100vw, 100vh) - 320px) / 485) calc(12px + 10.5 * (min(100vw, 100vh) - 320px) / 485) rgb(252, 201, 73), inset 0 0 0 2px goldenrod;
+    }
   }
   @keyframes ext-circle-glow {
     from {
@@ -92,7 +121,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  transform: rotate(15deg);
+  -webkit-transform: rotate(15deg);
+          transform: rotate(15deg);
 }
 
 .ext-petal {
@@ -104,7 +134,8 @@ body {
   border-left: 32px solid transparent;
   border-right: 32px solid transparent;
   inset: 74px auto;
-  transform: rotate(calc(var(--i) * 30deg));
+  -webkit-transform: rotate(calc(var(--i) * 30deg));
+          transform: rotate(calc(var(--i) * 30deg));
 }
 .ext-petal::after {
   content: "";
@@ -123,15 +154,29 @@ body {
   font-size: 34px;
   color: var(--txt-clr);
   z-index: 1;
-  transform: rotate(calc(var(--i) * -30deg - 15deg));
-  animation: text-rot 57s infinite linear;
+  -webkit-transform: rotate(calc(var(--i) * -30deg - 15deg));
+          transform: rotate(calc(var(--i) * -30deg - 15deg));
+  -webkit-animation: text-rot 57s infinite linear;
+          animation: text-rot 57s infinite linear;
+}
+@-webkit-keyframes text-rot {
+  from {
+    -webkit-transform: rotate(calc(var(--i) * -30deg - 15deg));
+            transform: rotate(calc(var(--i) * -30deg - 15deg));
+  }
+  to {
+    -webkit-transform: rotate(calc(var(--i) * -30deg - 15deg + 360deg));
+            transform: rotate(calc(var(--i) * -30deg - 15deg + 360deg));
+  }
 }
 @keyframes text-rot {
   from {
-    transform: rotate(calc(var(--i) * -30deg - 15deg));
+    -webkit-transform: rotate(calc(var(--i) * -30deg - 15deg));
+            transform: rotate(calc(var(--i) * -30deg - 15deg));
   }
   to {
-    transform: rotate(calc(var(--i) * -30deg - 15deg + 360deg));
+    -webkit-transform: rotate(calc(var(--i) * -30deg - 15deg + 360deg));
+            transform: rotate(calc(var(--i) * -30deg - 15deg + 360deg));
   }
 }
 @media (max-width: 805px), (max-height: 805px) {
@@ -173,7 +218,16 @@ body {
   width: 384.9px;
   display: flex;
   border-radius: 50%;
-  animation: mid-circle-glow 2.85s infinite alternate ease-in-out;
+  -webkit-animation: mid-circle-glow 2.85s infinite alternate ease-in-out;
+          animation: mid-circle-glow 2.85s infinite alternate ease-in-out;
+}
+@-webkit-keyframes mid-circle-glow {
+  from {
+    box-shadow: 0 0 26px 15px white;
+  }
+  to {
+    box-shadow: 0 0 39px 22.5px white;
+  }
 }
 @keyframes mid-circle-glow {
   from {
@@ -193,6 +247,14 @@ body {
   .mid-circle::after {
     height: calc(127px + 257 * (min(100vw, 100vh) - 320px) / 485);
     width: calc(127px + 257 * (min(100vw, 100vh) - 320px) / 485);
+  }
+  @-webkit-keyframes mid-circle-glow {
+    from {
+      box-shadow: 0 0 calc(15px + 11 * (min(100vw, 100vh) - 320px) / 485) calc(8px + 7 * (min(100vw, 100vh) - 320px) / 485) white, inset 0 0 0 2px goldenrod;
+    }
+    to {
+      box-shadow: 0 0 calc(22.5px + 16.5 * (min(100vw, 100vh) - 320px) / 485) calc(12px + 10.5 * (min(100vw, 100vh) - 320px) / 485) white, inset 0 0 0 2px goldenrod;
+    }
   }
   @keyframes mid-circle-glow {
     from {
@@ -224,7 +286,8 @@ body {
   border-left: 58px solid transparent;
   border-right: 58px solid transparent;
   inset: 41px auto;
-  transform: rotate(calc(var(--i) * 90deg));
+  -webkit-transform: rotate(calc(var(--i) * 90deg));
+          transform: rotate(calc(var(--i) * 90deg));
 }
 .int-petal::after {
   content: "";
@@ -284,7 +347,16 @@ body {
   height: 119%;
   width: 119%;
   border-radius: 50%;
-  animation: int-circle-glow 2.85s infinite alternate ease-in-out;
+  -webkit-animation: int-circle-glow 2.85s infinite alternate ease-in-out;
+          animation: int-circle-glow 2.85s infinite alternate ease-in-out;
+}
+@-webkit-keyframes int-circle-glow {
+  from {
+    box-shadow: 0 0 34px 31px white;
+  }
+  to {
+    box-shadow: 0 0 51px 46.5px white;
+  }
 }
 @keyframes int-circle-glow {
   from {
@@ -300,6 +372,14 @@ body {
     box-shadow: inset 0px 0px 0px calc(4px + 6 * (min(100vw, 100vh) - 320px) / 485) rgb(79, 0, 128), inset 0px 0px 0px calc((4px + 6 * (min(100vw, 100vh) - 320px) / 485) * 2) goldenrod;
     width: calc(39.7px + 78.6 * (min(100vw, 100vh) - 320px) / 485);
     height: calc(39.7px + 78.6 * (min(100vw, 100vh) - 320px) / 485);
+  }
+  @-webkit-keyframes int-circle-glow {
+    from {
+      box-shadow: 0 0 calc(15px + 19 * (min(100vw, 100vh) - 320px) / 485) calc(13px + 18 * (min(100vw, 100vh) - 320px) / 485) white, inset 0 0 0 2px goldenrod;
+    }
+    to {
+      box-shadow: 0 0 calc(22.5px + 28.5 * (min(100vw, 100vh) - 320px) / 485) calc(19.5px + 27 * (min(100vw, 100vh) - 320px) / 485) white, inset 0 0 0 2px goldenrod;
+    }
   }
   @keyframes int-circle-glow {
     from {
