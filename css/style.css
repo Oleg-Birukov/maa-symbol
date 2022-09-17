@@ -142,7 +142,7 @@ body {
   position: absolute;
   width: 154px;
   height: 40px;
-  top: -161px;
+  top: -160.5px;
   background-color: var(--clr);
   border-radius: 50% 50% 0 0/100% 100% 0 0;
 }
@@ -191,7 +191,7 @@ body {
   .ext-petal::after {
     width: calc(55px + 99 * (min(100vw, 100vh) - 320px) / 485);
     height: calc(16px + 24 * (min(100vw, 100vh) - 320px) / 485);
-    top: calc(-62px + -99 * (min(100vw, 100vh) - 320px) / 485);
+    top: calc(-62px + -98.5 * (min(100vw, 100vh) - 320px) / 485);
   }
   .ext-petal > span {
     top: calc(-40px + -68 * (min(100vw, 100vh) - 320px) / 485);
