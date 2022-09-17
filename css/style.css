@@ -389,4 +389,4 @@ body {
       box-shadow: 0 0 calc(22.5px + 28.5 * (min(100vw, 100vh) - 320px) / 485) calc(19.5px + 27 * (min(100vw, 100vh) - 320px) / 485) white, inset 0 0 0 2px goldenrod;
     }
   }
-}/*# sourceMappingURL=style.css.map */
+}
