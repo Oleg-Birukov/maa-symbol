@@ -148,7 +148,7 @@ body {
   top: -108px;
   display: flex;
   font-family: "Cormorant Upright", serif;
-  font-size: 30px;
+  font-size: 29px;
   color: var(--txt-clr);
   z-index: 1;
   -webkit-transform: rotate(calc(var(--i) * -30deg - 15deg));
@@ -192,7 +192,7 @@ body {
   }
   .ext-petal > span {
     top: calc(-40px + -68 * (min(100vw, 100vh) - 320px) / 485);
-    font-size: calc(11px + 19 * (min(100vw, 100vh) - 320px) / 485);
+    font-size: calc(11px + 18 * (min(100vw, 100vh) - 320px) / 485);
   }
 }
 
