@@ -1,8 +1,5 @@
 @import url(normalize.css);
-@font-face {
-  font-family: Gabriola;
-  src: url("/fonts/Gabriola.woff2") format("woff2"), url("/fonts/Gabriola.woff") format("woff"), url("/fonts/Gabriola.ttf") format("truetype");
-}
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Upright&display=swap");
 body {
   background-image: radial-gradient(closest-corner, rgb(79, 0, 128), rgb(79, 0, 128), rgb(51, 1, 59));
   overflow: hidden;
@@ -150,8 +147,8 @@ body {
   position: absolute;
   top: -108px;
   display: flex;
-  font-family: Gabriola;
-  font-size: 34px;
+  font-family: "Cormorant Upright", serif;
+  font-size: 30px;
   color: var(--txt-clr);
   z-index: 1;
   -webkit-transform: rotate(calc(var(--i) * -30deg - 15deg));
@@ -195,7 +192,7 @@ body {
   }
   .ext-petal > span {
     top: calc(-40px + -68 * (min(100vw, 100vh) - 320px) / 485);
-    font-size: calc(12px + 22 * (min(100vw, 100vh) - 320px) / 485);
+    font-size: calc(11px + 19 * (min(100vw, 100vh) - 320px) / 485);
   }
 }
 
@@ -302,8 +299,8 @@ body {
   position: absolute;
   display: flex;
   top: -89px;
-  font-family: Gabriola;
-  font-size: 37px;
+  font-family: "Cormorant Upright", serif;
+  font-size: 31px;
   color: var(--txt-clr);
   z-index: 100;
 }
@@ -323,7 +320,7 @@ body {
   }
   .int-petal > span {
     top: calc(-27px + -62 * (min(100vw, 100vh) - 320px) / 485);
-    font-size: calc(11px + 26 * (min(100vw, 100vh) - 320px) / 485);
+    font-size: calc(10px + 21 * (min(100vw, 100vh) - 320px) / 485);
   }
 }
 

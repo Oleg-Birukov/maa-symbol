@@ -7,15 +7,20 @@ $dur_divider: 20;
 
 @import url(normalize.css);
 
-@font-face {
-	font-family: Gabriola;
-	// src: url("/fonts/Gabriola.ttf") format("truetype");
-	src: url("/fonts/Gabriola.woff2") format("woff2"),
-		url("/fonts/Gabriola.woff") format("woff"), url("/fonts/Gabriola.ttf") format("truetype");
-	// font-weight: normal;
-	// font-style: normal;
-	// font-display: swap;
-}
+// @font-face {
+// 	font-family: Gabriola;
+// 	// src: url("/fonts/Gabriola.ttf") format("truetype");
+// 	src: url("/fonts/Gabriola.woff2") format("woff2"),
+// 		url("/fonts/Gabriola.woff") format("woff"), url("/fonts/Gabriola.ttf") format("truetype");
+// 	// font-weight: normal;
+// 	// font-style: normal;
+// 	// font-display: swap;
+// }
+
+// @import url('https://fonts.googleapis.com/css2?family=Charm&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Upright&display=swap');
+
+$ff:'Cormorant Upright', serif;
 
 body {
 	// background-color: $bg_color;
@@ -242,13 +247,14 @@ body {
 	// --- Text ---
 	// Qualities names
 	$s-t: -108px;
-	$s-fz: 34px;
+	$s-fz: 30px;
 
 	> span {
 		position: absolute;
 		top: $s-t;
 		display: flex;
-		font-family: Gabriola;
+		// font-family: Gabriola;
+		font-family: $ff;
 		font-size: $s-fz;
 		color: var(--txt-clr);
 		z-index: 1;
@@ -283,7 +289,7 @@ body {
 
 		> span {
 			@include proportional_length(top, -40px, $s-t);
-			@include proportional_length(font-size, 12px, $s-fz);
+			@include proportional_length(font-size, 11px, $s-fz);
 		}
 	}
 }
@@ -419,14 +425,15 @@ body {
 	// --- Text ---
 	// Aspects names
 	$ss-t: -89px;
-	$s-fz: 37px;
+	$s-fz: 31px;
 
 	> span {
 		position: absolute;
 		display: flex;
 		top: $ss-t;
 		// left: -14px;
-		font-family: Gabriola;
+		// font-family: Gabriola;
+		font-family: $ff;
 		font-size: $s-fz;
 		color: var(--txt-clr);
 		z-index: 100;
@@ -448,7 +455,7 @@ body {
 
 		> span {
 			@include proportional_length(top, -27px, $ss-t);
-			@include proportional_length(font-size, 11px, $s-fz);
+			@include proportional_length(font-size, 10px, $s-fz);
 		}
 	}
 }
