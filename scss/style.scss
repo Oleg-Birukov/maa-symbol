@@ -3,7 +3,7 @@ $sym_padding: 25px;
 $sym_size: 780px;
 $sym_total_size: $sym_padding + $sym_size;
 $duration: 57s;
-$dur_divider:24;
+$dur_divider: 20;
 
 @import url(normalize.css);
 
@@ -14,7 +14,12 @@ $dur_divider:24;
 
 body {
 	// background-color: $bg_color;
-	background-image: radial-gradient(closest-corner, $bg_color, $bg_color, rgb(51, 1, 59));
+	background-image: radial-gradient(
+		closest-corner,
+		$bg_color,
+		$bg_color,
+		rgb(51, 1, 59)
+	);
 	overflow: hidden;
 }
 
@@ -94,15 +99,16 @@ body {
 
 @mixin b-shadow($blr_min, $blr_max, $exp_min, $exp_max, $color) {
 	box-shadow: 0 0
-		calc(
-			$blr_min + ($blr_max/1px - $blr_min/1px) *
-				(((min(100vw, 100vh) - 320px)) / ($sym_total_size/1px - 320))
-		)
-		calc(
-			$exp_min + ($exp_max/1px - $exp_min/1px) *
-				(((min(100vw, 100vh) - 320px)) / ($sym_total_size/1px - 320))
-		)
-		$color;
+			calc(
+				$blr_min + ($blr_max/1px - $blr_min/1px) *
+					(((min(100vw, 100vh) - 320px)) / ($sym_total_size/1px - 320))
+			)
+			calc(
+				$exp_min + ($exp_max/1px - $exp_min/1px) *
+					(((min(100vw, 100vh) - 320px)) / ($sym_total_size/1px - 320))
+			)
+			$color,
+		inset 0 0 0 2px goldenrod;
 }
 
 .external-circle {
@@ -125,21 +131,21 @@ body {
 		width: 102.6%;
 		// background-color: bisque;
 		border-radius: 50%;
-		z-index: -1;
-		box-shadow: 0 0 $blr_max $exp_max rgb(252, 201, 73);
+		// box-shadow: 0 0 $blr_max $exp_max rgb(252, 201, 73),
+		// 	inset 0 0 0 30px red;
 
 		animation: ext-circle-glow calc($duration / $dur_divider) infinite alternate
 			ease-in-out;
 
 		@keyframes ext-circle-glow {
 			from {
-				/* box-shadow: 0 0 24px 28px rgb(252, 201, 73); */
-				box-shadow: 0 0 $blr_max $exp_max rgb(252, 201, 73);
+				box-shadow: 0 0 $blr_max $exp_max rgb(252, 201, 73),
+					inset 0 0 0 2px goldenrod;
 			}
 
 			to {
-				/* box-shadow: 0 0 50px 40px rgb(252, 201, 73); */
-				box-shadow: 0 0 $blr_max * 1.5 $exp_max * 1.5 rgb(252, 201, 73);
+				box-shadow: 0 0 $blr_max * 1.5 $exp_max * 1.5 rgb(252, 201, 73),
+					inset 0 0 0 2px goldenrod;
 			}
 		}
 	}
@@ -149,15 +155,27 @@ body {
 		&:after {
 			$blr_min: 15px;
 			$exp_min: 8px;
-			@include b-shadow(15px, $blr_max, 8px, $exp_max, rgb(252, 201, 73));
+			// @include b-shadow(15px, $blr_max, 8px, $exp_max, rgb(252, 201, 73));
 
 			@keyframes ext-circle-glow {
 				from {
-					box-shadow: 0 0 $blr_min $exp_min rgb(252, 201, 73);
+					@include b-shadow(
+						$blr_min,
+						$blr_max,
+						$exp_min,
+						$exp_max,
+						rgb(252, 201, 73)
+					);
 				}
 
 				to {
-					box-shadow: 0 0 $blr_min * 1.5 $exp_min * 1.5 rgb(252, 201, 73);
+					@include b-shadow(
+						$blr_min * 1.5,
+						$blr_max * 1.5,
+						$exp_min * 1.5,
+						$exp_max * 1.5,
+						rgb(252, 201, 73)
+					);
 				}
 			}
 		}
@@ -224,7 +242,6 @@ body {
 	> span {
 		position: absolute;
 		top: $s-t;
-		/* left: -6px; */
 		display: flex;
 		font-family: Gabriola;
 		font-size: $s-fz;
@@ -287,7 +304,7 @@ body {
 		width: 384.9px;
 		display: flex;
 		border-radius: 50%;
-		box-shadow: 0 0 $blr_max $exp_max white;
+		// box-shadow: 0 0 $blr_max $exp_max white;
 
 		animation: mid-circle-glow calc($duration / $dur_divider) infinite alternate
 			ease-in-out;
@@ -313,15 +330,23 @@ body {
 			$exp_min: 8px;
 			@include proportional_length(height, 127px, 384px);
 			@include proportional_length(width, 127px, 384px);
-			@include b-shadow(15px, $blr_max, 8px, $exp_max, white);
+			// @include b-shadow(15px, $blr_max, 8px, $exp_max, white);
 
 			@keyframes mid-circle-glow {
 				from {
-					box-shadow: 0 0 $blr_min $exp_min white;
+					// box-shadow: 0 0 $blr_min $exp_min white;
+					@include b-shadow($blr_min, $blr_max, $exp_min, $exp_max, white);
 				}
 
 				to {
-					box-shadow: 0 0 $blr_min * 1.5 $exp_min * 1.5 white;
+					// box-shadow: 0 0 $blr_min * 1.5 $exp_min * 1.5 white;
+					@include b-shadow(
+						$blr_min * 1.5,
+						$blr_max * 1.5,
+						$exp_min * 1.5,
+						$exp_max * 1.5,
+						white
+					);
 				}
 			}
 		}
@@ -444,7 +469,7 @@ body {
 		height: 119%;
 		width: 119%;
 		border-radius: 50%;
-		box-shadow: 0 0 $blr_max $exp_max white;
+		// box-shadow: 0 0 $blr_max $exp_max white;
 
 		animation: int-circle-glow calc($duration / $dur_divider) infinite alternate
 			ease-in-out;
@@ -467,18 +492,25 @@ body {
 		&:after {
 			$blr_min: 15px;
 			$exp_min: 13px;
-			@include b-shadow(15px, $blr_max, 13px, $exp_max, white);
+			// @include b-shadow(15px, $blr_max, 13px, $exp_max, white);
 
 			@keyframes int-circle-glow {
 				from {
-					box-shadow: 0 0 $blr_min $exp_min white;
+					// box-shadow: 0 0 $blr_min $exp_min white;
+					@include b-shadow($blr_min, $blr_max, $exp_min, $exp_max, white);
 				}
 
 				to {
-					box-shadow: 0 0 $blr_min * 1.5 $exp_min * 1.5 white;
+					// box-shadow: 0 0 $blr_min * 1.5 $exp_min * 1.5 white;
+					@include b-shadow(
+						$blr_min * 1.5,
+						$blr_max * 1.5,
+						$exp_min * 1.5,
+						$exp_max * 1.5,
+						white
+					);
 				}
 			}
 		}
 	}
 }
-

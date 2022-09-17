@@ -10,15 +10,9 @@ body {
 
 .container {
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
@@ -29,15 +23,9 @@ body {
   width: 805px;
   height: 805px;
   padding: 25px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   animation: symbol-rot 57s infinite linear reverse;
 }
 @media (max-width: 805px), (max-height: 805px) {
@@ -46,44 +34,25 @@ body {
     height: min(100vh, 100vw);
   }
 }
-@-webkit-keyframes symbol-rot {
-  from {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-}
 @keyframes symbol-rot {
   from {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   to {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 
 .external-circle {
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 100%;
   border-radius: 50%;
   border: 10px solid goldenrod;
-  -webkit-box-shadow: inset 0px 0px 0px 10px rgb(79, 0, 128), inset 0px 0px 0px 20px goldenrod;
-          box-shadow: inset 0px 0px 0px 10px rgb(79, 0, 128), inset 0px 0px 0px 20px goldenrod;
+  box-shadow: inset 0px 0px 0px 10px rgb(79, 0, 128), inset 0px 0px 0px 20px goldenrod;
 }
 .external-circle:after {
   content: "";
@@ -91,64 +60,27 @@ body {
   height: 102.6%;
   width: 102.6%;
   border-radius: 50%;
-  z-index: -1;
-  -webkit-box-shadow: 0 0 21px 15px rgb(252, 201, 73);
-          box-shadow: 0 0 21px 15px rgb(252, 201, 73);
-  -webkit-animation: ext-circle-glow 2.375s infinite alternate ease-in-out;
-          animation: ext-circle-glow 2.375s infinite alternate ease-in-out;
-}
-@-webkit-keyframes ext-circle-glow {
-  from {
-    /* box-shadow: 0 0 24px 28px rgb(252, 201, 73); */
-    -webkit-box-shadow: 0 0 21px 15px rgb(252, 201, 73);
-            box-shadow: 0 0 21px 15px rgb(252, 201, 73);
-  }
-  to {
-    /* box-shadow: 0 0 50px 40px rgb(252, 201, 73); */
-    -webkit-box-shadow: 0 0 31.5px 22.5px rgb(252, 201, 73);
-            box-shadow: 0 0 31.5px 22.5px rgb(252, 201, 73);
-  }
+  animation: ext-circle-glow 2.85s infinite alternate ease-in-out;
 }
 @keyframes ext-circle-glow {
   from {
-    /* box-shadow: 0 0 24px 28px rgb(252, 201, 73); */
-    -webkit-box-shadow: 0 0 21px 15px rgb(252, 201, 73);
-            box-shadow: 0 0 21px 15px rgb(252, 201, 73);
+    box-shadow: 0 0 21px 15px rgb(252, 201, 73), inset 0 0 0 2px goldenrod;
   }
   to {
-    /* box-shadow: 0 0 50px 40px rgb(252, 201, 73); */
-    -webkit-box-shadow: 0 0 31.5px 22.5px rgb(252, 201, 73);
-            box-shadow: 0 0 31.5px 22.5px rgb(252, 201, 73);
+    box-shadow: 0 0 31.5px 22.5px rgb(252, 201, 73), inset 0 0 0 2px goldenrod;
   }
 }
 @media (max-width: 805px), (max-height: 805px) {
   .external-circle {
     border: calc(4px + 6 * (min(100vw, 100vh) - 320px) / 485) solid goldenrod;
-    -webkit-box-shadow: inset 0px 0px 0px calc(4px + 6 * (min(100vw, 100vh) - 320px) / 485) rgb(79, 0, 128), inset 0px 0px 0px calc((4px + 6 * (min(100vw, 100vh) - 320px) / 485) * 2) goldenrod;
-            box-shadow: inset 0px 0px 0px calc(4px + 6 * (min(100vw, 100vh) - 320px) / 485) rgb(79, 0, 128), inset 0px 0px 0px calc((4px + 6 * (min(100vw, 100vh) - 320px) / 485) * 2) goldenrod;
-  }
-  .external-circle:after {
-    -webkit-box-shadow: 0 0 calc(15px + 6 * (min(100vw, 100vh) - 320px) / 485) calc(8px + 7 * (min(100vw, 100vh) - 320px) / 485) rgb(252, 201, 73);
-            box-shadow: 0 0 calc(15px + 6 * (min(100vw, 100vh) - 320px) / 485) calc(8px + 7 * (min(100vw, 100vh) - 320px) / 485) rgb(252, 201, 73);
-  }
-  @-webkit-keyframes ext-circle-glow {
-    from {
-      -webkit-box-shadow: 0 0 15px 8px rgb(252, 201, 73);
-              box-shadow: 0 0 15px 8px rgb(252, 201, 73);
-    }
-    to {
-      -webkit-box-shadow: 0 0 22.5px 12px rgb(252, 201, 73);
-              box-shadow: 0 0 22.5px 12px rgb(252, 201, 73);
-    }
+    box-shadow: inset 0px 0px 0px calc(4px + 6 * (min(100vw, 100vh) - 320px) / 485) rgb(79, 0, 128), inset 0px 0px 0px calc((4px + 6 * (min(100vw, 100vh) - 320px) / 485) * 2) goldenrod;
   }
   @keyframes ext-circle-glow {
     from {
-      -webkit-box-shadow: 0 0 15px 8px rgb(252, 201, 73);
-              box-shadow: 0 0 15px 8px rgb(252, 201, 73);
+      box-shadow: 0 0 calc(15px + 6 * (min(100vw, 100vh) - 320px) / 485) calc(8px + 7 * (min(100vw, 100vh) - 320px) / 485) rgb(252, 201, 73), inset 0 0 0 2px goldenrod;
     }
     to {
-      -webkit-box-shadow: 0 0 22.5px 12px rgb(252, 201, 73);
-              box-shadow: 0 0 22.5px 12px rgb(252, 201, 73);
+      box-shadow: 0 0 calc(22.5px + 9 * (min(100vw, 100vh) - 320px) / 485) calc(12px + 10.5 * (min(100vw, 100vh) - 320px) / 485) rgb(252, 201, 73), inset 0 0 0 2px goldenrod;
     }
   }
 }
@@ -157,34 +89,22 @@ body {
   position: absolute;
   width: 95%;
   height: 95%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-transform: rotate(15deg);
-          transform: rotate(15deg);
+  justify-content: center;
+  align-items: center;
+  transform: rotate(15deg);
 }
 
 .ext-petal {
   position: absolute;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   width: 154px;
   border-top: 122px solid var(--clr);
   border-left: 32px solid transparent;
   border-right: 32px solid transparent;
   inset: 74px auto;
-  -webkit-transform: rotate(calc(var(--i) * 30deg));
-          transform: rotate(calc(var(--i) * 30deg));
+  transform: rotate(calc(var(--i) * 30deg));
 }
 .ext-petal::after {
   content: "";
@@ -198,37 +118,20 @@ body {
 .ext-petal > span {
   position: absolute;
   top: -108px;
-  /* left: -6px; */
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   font-family: Gabriola;
   font-size: 34px;
   color: var(--txt-clr);
   z-index: 1;
-  -webkit-transform: rotate(calc(var(--i) * -30deg - 15deg));
-          transform: rotate(calc(var(--i) * -30deg - 15deg));
-  -webkit-animation: text-rot 57s infinite linear;
-          animation: text-rot 57s infinite linear;
-}
-@-webkit-keyframes text-rot {
-  from {
-    -webkit-transform: rotate(calc(var(--i) * -30deg - 15deg));
-            transform: rotate(calc(var(--i) * -30deg - 15deg));
-  }
-  to {
-    -webkit-transform: rotate(calc(var(--i) * -30deg - 15deg + 360deg));
-            transform: rotate(calc(var(--i) * -30deg - 15deg + 360deg));
-  }
+  transform: rotate(calc(var(--i) * -30deg - 15deg));
+  animation: text-rot 57s infinite linear;
 }
 @keyframes text-rot {
   from {
-    -webkit-transform: rotate(calc(var(--i) * -30deg - 15deg));
-            transform: rotate(calc(var(--i) * -30deg - 15deg));
+    transform: rotate(calc(var(--i) * -30deg - 15deg));
   }
   to {
-    -webkit-transform: rotate(calc(var(--i) * -30deg - 15deg + 360deg));
-            transform: rotate(calc(var(--i) * -30deg - 15deg + 360deg));
+    transform: rotate(calc(var(--i) * -30deg - 15deg + 360deg));
   }
 }
 @media (max-width: 805px), (max-height: 805px) {
@@ -253,21 +156,14 @@ body {
 
 .mid-circle {
   position: absolute;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   border-radius: 50%;
   width: 385px;
   height: 385px;
   border: 10px solid goldenrod;
-  -webkit-box-shadow: inset 0px 0px 0px 10px rgb(79, 0, 128), inset 0px 0px 0px 20px goldenrod;
-          box-shadow: inset 0px 0px 0px 10px rgb(79, 0, 128), inset 0px 0px 0px 20px goldenrod;
+  box-shadow: inset 0px 0px 0px 10px rgb(79, 0, 128), inset 0px 0px 0px 20px goldenrod;
   z-index: 4;
 }
 .mid-circle::after {
@@ -275,105 +171,60 @@ body {
   position: absolute;
   height: 384.9px;
   width: 384.9px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   border-radius: 50%;
-  -webkit-box-shadow: 0 0 26px 15px white;
-          box-shadow: 0 0 26px 15px white;
-  -webkit-animation: mid-circle-glow 2.375s infinite alternate ease-in-out;
-          animation: mid-circle-glow 2.375s infinite alternate ease-in-out;
-}
-@-webkit-keyframes mid-circle-glow {
-  from {
-    -webkit-box-shadow: 0 0 26px 15px white;
-            box-shadow: 0 0 26px 15px white;
-  }
-  to {
-    -webkit-box-shadow: 0 0 39px 22.5px white;
-            box-shadow: 0 0 39px 22.5px white;
-  }
+  animation: mid-circle-glow 2.85s infinite alternate ease-in-out;
 }
 @keyframes mid-circle-glow {
   from {
-    -webkit-box-shadow: 0 0 26px 15px white;
-            box-shadow: 0 0 26px 15px white;
+    box-shadow: 0 0 26px 15px white;
   }
   to {
-    -webkit-box-shadow: 0 0 39px 22.5px white;
-            box-shadow: 0 0 39px 22.5px white;
+    box-shadow: 0 0 39px 22.5px white;
   }
 }
 @media (max-width: 805px), (max-height: 805px) {
   .mid-circle {
     border: calc(4px + 6 * (min(100vw, 100vh) - 320px) / 485) solid goldenrod;
-    -webkit-box-shadow: inset 0px 0px 0px calc(4px + 6 * (min(100vw, 100vh) - 320px) / 485) rgb(79, 0, 128), inset 0px 0px 0px calc((4px + 6 * (min(100vw, 100vh) - 320px) / 485) * 2) goldenrod;
-            box-shadow: inset 0px 0px 0px calc(4px + 6 * (min(100vw, 100vh) - 320px) / 485) rgb(79, 0, 128), inset 0px 0px 0px calc((4px + 6 * (min(100vw, 100vh) - 320px) / 485) * 2) goldenrod;
+    box-shadow: inset 0px 0px 0px calc(4px + 6 * (min(100vw, 100vh) - 320px) / 485) rgb(79, 0, 128), inset 0px 0px 0px calc((4px + 6 * (min(100vw, 100vh) - 320px) / 485) * 2) goldenrod;
     width: calc(127.2px + 257.8 * (min(100vw, 100vh) - 320px) / 485);
     height: calc(127.2px + 257.8 * (min(100vw, 100vh) - 320px) / 485);
   }
   .mid-circle::after {
     height: calc(127px + 257 * (min(100vw, 100vh) - 320px) / 485);
     width: calc(127px + 257 * (min(100vw, 100vh) - 320px) / 485);
-    -webkit-box-shadow: 0 0 calc(15px + 11 * (min(100vw, 100vh) - 320px) / 485) calc(8px + 7 * (min(100vw, 100vh) - 320px) / 485) white;
-            box-shadow: 0 0 calc(15px + 11 * (min(100vw, 100vh) - 320px) / 485) calc(8px + 7 * (min(100vw, 100vh) - 320px) / 485) white;
-  }
-  @-webkit-keyframes mid-circle-glow {
-    from {
-      -webkit-box-shadow: 0 0 15px 8px white;
-              box-shadow: 0 0 15px 8px white;
-    }
-    to {
-      -webkit-box-shadow: 0 0 22.5px 12px white;
-              box-shadow: 0 0 22.5px 12px white;
-    }
   }
   @keyframes mid-circle-glow {
     from {
-      -webkit-box-shadow: 0 0 15px 8px white;
-              box-shadow: 0 0 15px 8px white;
+      box-shadow: 0 0 calc(15px + 11 * (min(100vw, 100vh) - 320px) / 485) calc(8px + 7 * (min(100vw, 100vh) - 320px) / 485) white, inset 0 0 0 2px goldenrod;
     }
     to {
-      -webkit-box-shadow: 0 0 22.5px 12px white;
-              box-shadow: 0 0 22.5px 12px white;
+      box-shadow: 0 0 calc(22.5px + 16.5 * (min(100vw, 100vh) - 320px) / 485) calc(12px + 10.5 * (min(100vw, 100vh) - 320px) / 485) white, inset 0 0 0 2px goldenrod;
     }
   }
 }
 
 .int-petals-container {
   position: absolute;
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
+  box-sizing: content-box;
   width: 36%;
   height: 36%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .int-petal {
   position: absolute;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
+  justify-content: center;
+  box-sizing: content-box;
   width: 75px;
   border-top: 58px solid var(--clr);
   border-left: 58px solid transparent;
   border-right: 58px solid transparent;
   inset: 41px auto;
-  -webkit-transform: rotate(calc(var(--i) * 90deg));
-          transform: rotate(calc(var(--i) * 90deg));
+  transform: rotate(calc(var(--i) * 90deg));
 }
 .int-petal::after {
   content: "";
@@ -386,8 +237,6 @@ body {
 }
 .int-petal > span {
   position: absolute;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   top: -89px;
   font-family: Gabriola;
@@ -417,24 +266,16 @@ body {
 
 .internal-circle {
   position: absolute;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  box-sizing: border-box;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   border-radius: 50%;
   width: 118.3px;
   height: 118.3px;
   background-color: white;
   border: 10px solid goldenrod;
-  -webkit-box-shadow: inset 0px 0px 0px 10px rgb(79, 0, 128), inset 0px 0px 0px 20px goldenrod;
-          box-shadow: inset 0px 0px 0px 10px rgb(79, 0, 128), inset 0px 0px 0px 20px goldenrod;
+  box-shadow: inset 0px 0px 0px 10px rgb(79, 0, 128), inset 0px 0px 0px 20px goldenrod;
   z-index: 500;
 }
 .internal-circle::after {
@@ -443,61 +284,29 @@ body {
   height: 119%;
   width: 119%;
   border-radius: 50%;
-  -webkit-box-shadow: 0 0 34px 31px white;
-          box-shadow: 0 0 34px 31px white;
-  -webkit-animation: int-circle-glow 2.375s infinite alternate ease-in-out;
-          animation: int-circle-glow 2.375s infinite alternate ease-in-out;
-}
-@-webkit-keyframes int-circle-glow {
-  from {
-    -webkit-box-shadow: 0 0 34px 31px white;
-            box-shadow: 0 0 34px 31px white;
-  }
-  to {
-    -webkit-box-shadow: 0 0 51px 46.5px white;
-            box-shadow: 0 0 51px 46.5px white;
-  }
+  animation: int-circle-glow 2.85s infinite alternate ease-in-out;
 }
 @keyframes int-circle-glow {
   from {
-    -webkit-box-shadow: 0 0 34px 31px white;
-            box-shadow: 0 0 34px 31px white;
+    box-shadow: 0 0 34px 31px white;
   }
   to {
-    -webkit-box-shadow: 0 0 51px 46.5px white;
-            box-shadow: 0 0 51px 46.5px white;
+    box-shadow: 0 0 51px 46.5px white;
   }
 }
 @media (max-width: 805px), (max-height: 805px) {
   .internal-circle {
     border: calc(4px + 6 * (min(100vw, 100vh) - 320px) / 485) solid goldenrod;
-    -webkit-box-shadow: inset 0px 0px 0px calc(4px + 6 * (min(100vw, 100vh) - 320px) / 485) rgb(79, 0, 128), inset 0px 0px 0px calc((4px + 6 * (min(100vw, 100vh) - 320px) / 485) * 2) goldenrod;
-            box-shadow: inset 0px 0px 0px calc(4px + 6 * (min(100vw, 100vh) - 320px) / 485) rgb(79, 0, 128), inset 0px 0px 0px calc((4px + 6 * (min(100vw, 100vh) - 320px) / 485) * 2) goldenrod;
+    box-shadow: inset 0px 0px 0px calc(4px + 6 * (min(100vw, 100vh) - 320px) / 485) rgb(79, 0, 128), inset 0px 0px 0px calc((4px + 6 * (min(100vw, 100vh) - 320px) / 485) * 2) goldenrod;
     width: calc(39.7px + 78.6 * (min(100vw, 100vh) - 320px) / 485);
     height: calc(39.7px + 78.6 * (min(100vw, 100vh) - 320px) / 485);
   }
-  .internal-circle:after {
-    -webkit-box-shadow: 0 0 calc(15px + 19 * (min(100vw, 100vh) - 320px) / 485) calc(13px + 18 * (min(100vw, 100vh) - 320px) / 485) white;
-            box-shadow: 0 0 calc(15px + 19 * (min(100vw, 100vh) - 320px) / 485) calc(13px + 18 * (min(100vw, 100vh) - 320px) / 485) white;
-  }
-  @-webkit-keyframes int-circle-glow {
-    from {
-      -webkit-box-shadow: 0 0 15px 13px white;
-              box-shadow: 0 0 15px 13px white;
-    }
-    to {
-      -webkit-box-shadow: 0 0 22.5px 19.5px white;
-              box-shadow: 0 0 22.5px 19.5px white;
-    }
-  }
   @keyframes int-circle-glow {
     from {
-      -webkit-box-shadow: 0 0 15px 13px white;
-              box-shadow: 0 0 15px 13px white;
+      box-shadow: 0 0 calc(15px + 19 * (min(100vw, 100vh) - 320px) / 485) calc(13px + 18 * (min(100vw, 100vh) - 320px) / 485) white, inset 0 0 0 2px goldenrod;
     }
     to {
-      -webkit-box-shadow: 0 0 22.5px 19.5px white;
-              box-shadow: 0 0 22.5px 19.5px white;
+      box-shadow: 0 0 calc(22.5px + 28.5 * (min(100vw, 100vh) - 320px) / 485) calc(19.5px + 27 * (min(100vw, 100vh) - 320px) / 485) white, inset 0 0 0 2px goldenrod;
     }
   }
-}
+}/*# sourceMappingURL=style.css.map */

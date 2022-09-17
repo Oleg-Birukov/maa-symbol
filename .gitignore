@@ -29,3 +29,5 @@
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode
 
 fonts.txt
+node_modules/
+*.json
