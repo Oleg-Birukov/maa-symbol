@@ -1,7 +1,7 @@
 @import url(normalize.css);
 @font-face {
   font-family: Gabriola;
-  src: local("/fonts/Gabriola.ttf") format("truetype");
+  src: src("/fonts/Gabriola.ttf") format("truetype");
 }
 body {
   background-image: radial-gradient(closest-corner, rgb(79, 0, 128), rgb(79, 0, 128), rgb(51, 1, 59));
